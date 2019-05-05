@@ -7,6 +7,12 @@
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
+		<nav>
+			<img id="Logo"src ="/models/assets/eug-logo-1x.png">
+			<img id="filter"src ="models/assets/filter-icon.svg">
+
+
+		</nav>
 		<div id="map"></div>
 	</body>
 	<footer>
@@ -101,7 +107,8 @@
 		        	if (colorClicked == true){
 		        		controlUI.style.backgroundColor = 'rgb(211,211,211)';
 		        		colorClicked = false;
-		        		// Hide markers of the chosen color.
+								
+								// Hide markers of the chosen color.
 		        		for (let index in objectList){
 			        		if (objectList[index]["color"] == color){
 			        			hideInfoObjects(objectList[index]);
@@ -127,7 +134,7 @@
 				});
 
 				// Color Filter Buttons.
-				let BControlDiv = document.createElement('div');
+						let BControlDiv = document.createElement('div');
         		let BcenterControl = new CenterControl(BControlDiv, map, "Filter Blue", "Click to filter blue events", "blue", blueClicked);
         		
         		let RControlDiv = document.createElement('div');
