@@ -7,15 +7,55 @@
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
+		
 		<nav>
 			<img id="Logo"src ="/models/assets/eug-logo-1x.png">
-			<img id="filter"src ="models/assets/filter-icon.svg">
-
-
-		</nav>
+			
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">
+			
+				<img id="filter"src ="models/assets/filter-icon.svg"></img>
+			
+			</span>
+			
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<h1>Filters</h1>
+				<div id="controlUI"> 
+		<!----Future images above filter buttons-->
+			<!---
+		  <img id="filterButtonBlue"src ="/markers/blue-dot.png">
+				<br>
+				<img id="filterButtonRed"src ="/markers/red-dot.png">
+				<br>
+				<img id="filterButtonOrange"src ="/markers/orange-dot.png">
+				<br>
+				<img id="filterButtonPurple"src ="/markers/purple-dot.png">
+				<br>
+				<img id="filterButtonGreen"src ="/markers/green-dot.png">
+				<br>
+				<img id="filterButtonYellow"src ="/markers/yellow-dot.png">
+			-->
+				</div>
+					
+			</div>
+			<script>
+			
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "250px";
+			}
+			
+			function closeNav() {
+				document.getElementById("mySidenav").style.width = "0";
+			}</script>
+		
+	</nav>
+		
 		<div id="map"></div>
+	
 	</body>
+	
 	<footer>
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -88,6 +128,9 @@
 		        controlUI.style.textAlign = 'center';
 		        controlUI.title = title;
 		        controlDiv.appendChild(controlUI);
+						// add buttons to side navigation
+						 let sidenav = document.getElementById("controlUI");
+							sidenav.appendChild(controlDiv);
 
 		        // Set CSS for the control interior.
 		        let controlText = document.createElement('div');
@@ -97,7 +140,7 @@
 		        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
 		        controlText.style.fontSize = '16px';
 		        controlText.style.lineHeight = '38px';
-		        controlText.style.paddingLeft = '5px';
+		        controlText.style.paddingLeft = '45px';
 		        controlText.style.paddingRight = '5px';
 		        controlText.innerHTML = text;
 		        controlUI.appendChild(controlText);
@@ -129,14 +172,14 @@
 
 			function initMap() {
 				map = new google.maps.Map(document.getElementById('map'), {
-					center: {lat: 44.048, lng: -123.101},
+					center: {lat: 44.051, lng: -123.099},
 					zoom: 15
 				});
 
 				// Color Filter Buttons.
 						let BControlDiv = document.createElement('div');
         		let BcenterControl = new CenterControl(BControlDiv, map, "Filter Blue", "Click to filter blue events", "blue", blueClicked);
-        		
+
         		let RControlDiv = document.createElement('div');
         		let RcenterControl = new CenterControl(RControlDiv, map, "Filter Red", "Click to filter red events", "red", redClicked);
 
@@ -153,12 +196,12 @@
         		let OcenterControl = new CenterControl(OControlDiv, map, "Filter Orange", "Click to filter orange events", "orange", orangeClicked);
         		
         		// Add buttons to the map.
-        		map.controls[google.maps.ControlPosition.RIGHT].push(BControlDiv);
-        		map.controls[google.maps.ControlPosition.RIGHT].push(RControlDiv);
-        		map.controls[google.maps.ControlPosition.RIGHT].push(GControlDiv);
-        		map.controls[google.maps.ControlPosition.RIGHT].push(YControlDiv);
-        		map.controls[google.maps.ControlPosition.RIGHT].push(PControlDiv);
-        		map.controls[google.maps.ControlPosition.RIGHT].push(OControlDiv);
+        		//map.controls[google.maps.ControlPosition.RIGHT].push(BControlDiv);
+        		//map.controls[google.maps.ControlPosition.RIGHT].push(RControlDiv);
+        		//map.controls[google.maps.ControlPosition.RIGHT].push(GControlDiv);
+        		//map.controls[google.maps.ControlPosition.RIGHT].push(YControlDiv);
+        		//map.controls[google.maps.ControlPosition.RIGHT].push(PControlDiv);
+        		//map.controls[google.maps.ControlPosition.RIGHT].push(OControlDiv);
 				
 				// HTML5 geolocation.
 				//getLocation()
@@ -187,18 +230,18 @@
 
 				});
 				
-				// $.getJSON("test.json", function(data){
-				// 	$.each(data["data"], function(index, value){
-				// 		let object = createInfoObjects(value);
-				// 		google.maps.event.addListener(object["infoWindow"], "closeclick", function(){
-				// 			hideInfoObjects(object);
-				// 		});
-				// 		google.maps.event.addListener(object["marker"], "click", function(){
-				// 			showInfoObjects(object);
-				// 		});
-				// 		objectList.push(object);
-				// 	});
-				// });
+				//  $.getJSON("test.json", function(data){
+			  // 	$.each(data["data"], function(index, value){
+				//  		let object = createInfoObjects(value);
+				//  		google.maps.event.addListener(object["infoWindow"], "closeclick", function(){
+				//  			hideInfoObjects(object);
+				//  		});
+				//  		google.maps.event.addListener(object["marker"], "click", function(){
+				//  			showInfoObjects(object);
+				//  		});
+				//  		objectList.push(object);
+				//  	});
+				//  });
 				
 			}
 
