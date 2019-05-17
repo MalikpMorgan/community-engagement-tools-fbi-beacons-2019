@@ -73,8 +73,8 @@ nav img#filter{
   float: right;
   padding-right: 5px;
 }
-/* side navigation styling */
-.sidenav {
+
+/* .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -111,7 +111,7 @@ nav img#filter{
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
+} */
 
 /* .sidenav #controlUI img#filterButtonRed{ 
  
@@ -147,6 +147,7 @@ padding-left: 75px;
 }
 */
 
+/*
 .sidenav h1{
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 padding-left: 65px;
@@ -154,3 +155,4 @@ color: #b3b3b3;
 outline-color: #535252; 
 
 }
+*/
