@@ -4,8 +4,8 @@
 
 ### This project is built using a LAMP Stack with it being hosted on Amazon Web Services.
 
-### No installation is needed for this web application, simply go to the url: <http://54.214.135.100/community-engagement-tools-fbi-beacons-2019/index.html> and you can see the demonstration of the future implementation of our project.
-
+### No installation is needed for this web application, simply go to the url: !! <http://54.214.135.100/community-engagement-tools-fbi-beacons-2019/index.html> and you can see the demonstration of the future implementation of our project. {This Project is no longer available at this address}
+ 
 ### Given that this project will eventually be moved to a mobile application, we have provided in the "models" folder a video demo and some assets to demonstrate how it may look in the future.
 
 #### AUTHORS
